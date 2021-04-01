@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Katalog Filem</string>
+    <string name="label_info">Info</string>
+    <string name="label_phone">Phone Number</string>
+    <string name="label_name">Name</string>
+    <string name="label_email">Email Accout</string>
+    <string name="label_addres">Addres</string>
+
+    <string name="label_settings">Settings</string>
+</resources>
