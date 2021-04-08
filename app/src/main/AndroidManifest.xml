@@ -9,20 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LatihanDuaActivity">
-
-        </activity>
-        <activity android:name=".LatihanSatuActivity">
-
-        </activity>
-        <activity android:name=".RelativeActivity"></activity>
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MovieFormActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".MovieDetailActivity"
+            android:theme="@style/AppThemeDetail" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LatihanDuaActivity" />
+        <activity android:name=".LatihanSatuActivity" />
+        <activity android:name=".RelativeActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
