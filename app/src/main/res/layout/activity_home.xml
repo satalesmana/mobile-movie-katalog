@@ -7,25 +7,11 @@
     android:orientation="vertical"
     tools:context=".HomeActivity">
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/recle_movie_list">
 
-            <include layout="@layout/adapter_movie_card"></include>
-
-            <include layout="@layout/adapter_movie_card"></include>
-
-            <include layout="@layout/adapter_movie_card"></include>
-
-            <include layout="@layout/adapter_movie_card"></include>
-
-        </LinearLayout>
-
-
-    </ScrollView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
