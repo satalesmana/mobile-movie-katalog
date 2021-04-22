@@ -1,9 +1,11 @@
 package com.sata.katalogfilem.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sata.katalogfilem.Model.MovieListModel;
+import com.sata.katalogfilem.MovieDetailActivity;
 import com.sata.katalogfilem.R;
 import com.squareup.picasso.Picasso;
 
@@ -42,13 +45,22 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Adap
         String poster = search.getPoster();
         String tahun = search.getYear();
         String type = search.getType();
-
+        String imdbID = search.getImdbID();
 
         holder.tvDeskripsi.setText(tahun +" | " + type );
         holder.tvTitile.setText(title);
         Picasso.get()
                 .load(poster)
                 .into(holder.imgPoster);
+
+        holder.btnMovieDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentDetail = new Intent(context, MovieDetailActivity.class);
+                intentDetail.putExtra("imdbID", imdbID);
+                context.startActivity(intentDetail);
+            }
+        });
 
     }
 
@@ -60,6 +72,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Adap
     public class AdapterHolder extends RecyclerView.ViewHolder {
         TextView tvTitile, tvDeskripsi;
         ImageView imgPoster;
+        Button btnMovieDetail;
+
 
         public AdapterHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,6 +81,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Adap
             tvDeskripsi = itemView.findViewById(R.id.tv_subtitile);
             imgPoster = itemView.findViewById(R.id.img_poster);
             tvTitile = itemView.findViewById(R.id.tv_Title);
+            btnMovieDetail = itemView.findViewById(R.id.bnt_movie_detail);
 
         }
     }
